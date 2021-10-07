@@ -5,8 +5,7 @@ public class CalculatorServer {
 	public static void main(String[] args) throws IOException {
 		ServerSocket welcomeSocket;
 		String clientSentence;
-		int result = 0;
-		String output_string = null;
+		String output_string;
 		String serverIP = null;
 		int nPort = 0;
 		
@@ -20,6 +19,8 @@ public class CalculatorServer {
  
         } catch (IOException e) {
             System.out.println(e.getMessage());
+            serverIP = "127.0.0.1";
+            nPort = 6789;
         }
 
 		welcomeSocket = new ServerSocket(nPort);
@@ -36,50 +37,48 @@ public class CalculatorServer {
 
 			clientSentence = inFromClient.readLine();
 			System.out.println("FROM CLIENT: " + clientSentence );
-			String[] input = clientSentence.split(" ");
 			
-			try {
-				argument(input.length);
-				switch(input[0]) {
-				case "ADD":
-					result = Integer.parseInt(input[1]) + Integer.parseInt(input[2]);
-					output_string = Integer.parseInt(input[1]) + " + " + Integer.parseInt(input[2]) + " = " + result + "\n";
-					break;
-				case "MINUS":
-					result = Integer.parseInt(input[1]) - Integer.parseInt(input[2]);
-					output_string = Integer.parseInt(input[1]) + " - " + Integer.parseInt(input[2]) + " = " + result + "\n";
-					break;
-				case "DIV":
-					result = Integer.parseInt(input[1]) / Integer.parseInt(input[2]);
-					output_string = Integer.parseInt(input[1]) + " / " + Integer.parseInt(input[2]) + " = " + result + "\n";
-					break;
-				case "MULTI":
-					result = Integer.parseInt(input[1]) * Integer.parseInt(input[2]);
-					output_string = Integer.parseInt(input[1]) + " * " + Integer.parseInt(input[2]) + " = " + result + "\n";
-					break;
-				default:
-					System.out.println("Wrong Operation (Only ADD, MINUS, MULTI, DIV)");
-				}
-			} catch(Exception e) {
-				System.out.println(e.getMessage());
-				output_string = e.getMessage();
-				outToClient.writeBytes(output_string);
-				
-				clientSentence = inFromClient.readLine();
-				System.out.println("FROM CLIENT: " + clientSentence );
-				String[] input = clientSentence.split(" ");
-			}
+			output_string = calculation(clientSentence);
 			
+			System.out.println(output_string);
 
-			outToClient.writeBytes(output_string); 
+			outToClient.writeBytes(output_string + "\n"); 
 		} 
 	}
 	
 	public static void argument(int length) throws Exception{
-		if(length > 3) {
+		if(length > 3)
 			throw new Exception("Too many arguments");
-		if(length < 3)
+		else if(length < 3)
 			throw new Exception("You must have two arguments");
+	}
+		
+	public static String calculation(String clientSentence) {
+		int result = 0;
+		String[] input = clientSentence.split(" ");
+		
+		try {
+			argument(input.length);
+			switch(input[0]) {
+			case "ADD":
+				result = Integer.parseInt(input[1]) + Integer.parseInt(input[2]);
+				return Integer.parseInt(input[1]) + " + " + Integer.parseInt(input[2]) + " = " + result;
+			case "MINUS":
+				result = Integer.parseInt(input[1]) - Integer.parseInt(input[2]);
+				return Integer.parseInt(input[1]) + " - " + Integer.parseInt(input[2]) + " = " + result;
+			case "DIV":
+				result = Integer.parseInt(input[1]) / Integer.parseInt(input[2]);
+				return Integer.parseInt(input[1]) + " / " + Integer.parseInt(input[2]) + " = " + result;
+			case "MULTI":
+				result = Integer.parseInt(input[1]) * Integer.parseInt(input[2]);
+				return Integer.parseInt(input[1]) + " * " + Integer.parseInt(input[2]) + " = " + result;
+			default:
+				return "[error] Wrong Operation (Only ADD, MINUS, MULTI, DIV)";
+			}
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			return "[error] " + e.getMessage();
+		}
 	}
 }
 

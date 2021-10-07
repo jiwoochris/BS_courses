@@ -21,6 +21,8 @@ public class CalculatorClient {
  
         } catch (IOException e) {
             System.out.println(e.getMessage());
+            serverIP = "127.0.0.1";
+            nPort = 6789;
         }
 
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in)); 
