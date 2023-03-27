@@ -20,10 +20,9 @@ roi = img[50:300, 0:250]   # image cropping (ROI extraction by slicing)
 cv.imshow('Color Image', img)
 cv.imshow('Gray Image', gray)
 cv.imshow('Cropped Image', roi)
-          
 
 RGB_img  =  cv.cvtColor(img,  cv.COLOR_BGR2RGB) #  convert  color  space  from  BGR  to  RGB RGB_roi = RGB_img[50:300, 30:280]
-RGB_roi = img[50:300, 30:280]   # image cropping (ROI extraction by slicing) pit.ims how(RGB_roi)
+RGB_roi = RGB_img[50:300, 30:280]   # image cropping (ROI extraction by slicing) pit.ims how(RGB_roi)
 
 plt.imshow(RGB_roi)
 plt.show()
