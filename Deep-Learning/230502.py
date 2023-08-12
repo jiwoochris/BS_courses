@@ -13,6 +13,7 @@ from matplotlib import pyplot as plt # Data 시각화를 돕는 matplotlib 모�
 use_cuda = torch.cuda.is_available() 
 device = torch.device("cuda" if use_cuda else "cpu")
 
+print(device)
 
 
 
