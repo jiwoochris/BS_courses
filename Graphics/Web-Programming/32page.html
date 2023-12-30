@@ -1,0 +1,8 @@
+<p onclick="this.innerHTML='You clicked this paragraph!'">
+Click this paragraph.</p>
+<p onclick="changeText(this)">This is another paragraph to click.</p>
+<script>
+function changeText(element) {
+	element.innerHTML="This paragraph is also clicked!";
+}
+</script>

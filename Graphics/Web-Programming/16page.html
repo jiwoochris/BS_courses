@@ -1,0 +1,17 @@
+<script>
+function println(value)
+{
+    if (value != undefined) document.write(value);
+    document.write("<br>");
+}
+</script>
+<script>
+var obj = {
+  ob_num: 201401234,
+  ob_str: "John Smith",
+  ob_print: function() { println(this.ob_str); }
+};
+ 
+println(obj.ob_num);    // obj[ob_num] doesn't work
+obj.ob_print();
+</script>

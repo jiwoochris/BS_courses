@@ -1,0 +1,16 @@
+<p>Current date is: <span id="sp1"></span></p>
+<input type="button" id="b1" value="Get date"/>
+<input type="button" id="b2" value="Set title"/>
+
+<script>
+var x = document.getElementById("b1");
+x.onclick = function getDate() {
+	document.getElementById("sp1").innerHTML = Date();
+}
+
+var y = document.getElementById("b2");
+y.onclick = function setTitle() {
+	var t = document.getElementsByTagName("p");
+	t[0].innerHTML = Date();
+}
+</script>

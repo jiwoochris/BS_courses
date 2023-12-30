@@ -1,0 +1,9 @@
+<p>Hello World!</p>
+<div id="main">
+<p>DOM is very useful.</p>
+<p>This demonstrates <em>getElementsByTagName</em> method.</p></div>
+<script>
+var x=document.getElementById("main");
+var y=x.getElementsByTagName("p");
+document.write("<p>First &lt;p&gt; element inside \"main\" is: " + y[0].innerHTML + "</p>");
+</script>

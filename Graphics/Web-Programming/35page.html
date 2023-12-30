@@ -1,0 +1,14 @@
+<head>
+<style>
+div {background-color:#D94A38; color:white; width:150px; height:20px; padding:40px;}
+</style>
+
+<script>
+function mouseOver(elem) {elem.innerHTML="Thank you!";}
+function mouseOut(elem) {elem.innerHTML="Move mouse here ";}
+</script>
+</head>
+
+<body>
+<div onmouseover ="mouseOver(this)" onmouseout ="mouseOut(this)">Move mouse here</div>
+</body>

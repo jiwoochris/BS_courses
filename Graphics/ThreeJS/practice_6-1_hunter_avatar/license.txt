@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hunter Avatar
+* source:	https://sketchfab.com/3d-models/hunter-avatar-93c6c4f6455849bb9095d02a309fdded
+* author:	3DRaven (https://sketchfab.com/3DRaven)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hunter Avatar" (https://sketchfab.com/3d-models/hunter-avatar-93c6c4f6455849bb9095d02a309fdded) by 3DRaven (https://sketchfab.com/3DRaven) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
