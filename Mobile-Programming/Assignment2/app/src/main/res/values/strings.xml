@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">202037071 정지우 </string>
+    <string name="listView_title">ListView Fragment </string>
+    <string name="spinner_title">Spinner Fragment</string>
+    <string name="main">메인</string>
+    <string name="menu">메뉴</string>
+
+</resources>

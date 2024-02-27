@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        />
+
+    <EditText
+        android:id="@+id/userDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="학과"
+        />
+
+    <EditText
+        android:id="@+id/userStudentId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="학번"
+        />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/showUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL"
+        android:enabled="false"
+        />
+
+    <Button
+        android:id="@+id/webConnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="웹접속"
+        />
+
+    <EditText
+        android:id="@+id/showPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone"
+        android:enabled="false"
+        />
+
+    <Button
+        android:id="@+id/phoneCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화 연결"
+        />
+
+</LinearLayout>
